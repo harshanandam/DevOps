@@ -8,7 +8,7 @@ node {
 
     def HUB_ORG='devops@consulting.com'
     def SFDC_HOST ='https://login.salesforce.com'
-    def JWT_KEY_CRED_ID ='1eaf41e9-b4a3-46ad-85bc-dca8553ca106'
+    def JWT_KEY_CRED_ID ='ceae7dde-3411-4683-8dbd-ddd403503bb9'
     def CONNECTED_APP_CONSUMER_KEY='3MVG9fe4g9fhX0E5OQ5io6ZEuFQFyKM21dJCnk4UDFdgWf10iYIbnzW0bw7RMnj55Sk7RIz0u8VCWiuu9qgIr'
         
 
