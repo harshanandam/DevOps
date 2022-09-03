@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@sriharshansfdc 
-forcedotcom
-/
-sfdx-jenkins-package
-Public
-Code
-Issues
-1
-Pull requests
-4
-Actions
-Projects
-Security
-Insights
-sfdx-jenkins-package/Jenkinsfile
-@teresa-allen-sfdc
-teresa-allen-sfdc updated ${SF_INSTANCE_URL}
-…
-Latest commit 1a26d20 on 13 Mar 2020
- History
- 3 contributors
-@jholmes612@teresa-allen-sfdc@ekapner
-202 lines (150 sloc)  8.56 KB
-
 #!groovy
 
 import groovy.json.JsonSlurperClassic
