@@ -10,7 +10,7 @@ node {
     def SFDC_HOST ='https://login.salesforce.com'
     def JWT_KEY_CRED_ID ='4e7641c5-7327-4e6c-b286-39385563d52d'
     def CONNECTED_APP_CONSUMER_KEY='3MVG9fe4g9fhX0E5OQ5io6ZEuFQFyKM21dJCnk4UDFdgWf10iYIbnzW0bw7RMnj55Sk7RIz0u8VCWiuu9qgIr'
-    def serverkey = '-----BEGIN RSA PRIVATE KEY-----
+    def SERVERKEY = '-----BEGIN RSA PRIVATE KEY-----
 MIIEpgIBAAKCAQEAw7XBChpt3JPe7LwJzbreYqc2vOzwSkyYKO6iN7GKQAtI3G4y
 bA1/hbhyhtFtyXWxr9XxZg+CXYR+aN5DLPCj0kt3jdoLNxpAKVsMTnV/YYk9mWbl
 ek65eNWKAO2ZXIxRGRE5fpRQkJ88GknZ1JXqD1ZpFPOSacdjWP56f7OFgT8jAl90
@@ -55,9 +55,9 @@ ga96wNUKzexw8VbzZ5UdFt8epPyMQT5tOj8APVPITT1YyYj4PrDFVWPE
         stage('Deploye Code') {
             if (isUnix()) {
 		rdf = sh "echo $jwt_key_file"
-                rc = sh returnStatus: true, script: "${toolbelt} force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${serverkey} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
+                rc = sh returnStatus: true, script: "${toolbelt} force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${SERVERKEY} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
             }else{
-                 rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile \"${serverkey}\" --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
+                 rc = bat returnStatus: true, script: "\"${toolbelt}\" force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile \"${SERVERKEY}\" --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
             }
             if (rc != 0) { error 'hub org authorization failed' }
 
