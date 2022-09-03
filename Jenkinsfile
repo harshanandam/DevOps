@@ -25,8 +25,7 @@ node {
     }
 
     withCredentials([file(credentialsId: JWT_KEY_CRED_ID, variable: 'jwt_key_file')]) {
-	println ${jwt_key_file}
-	echo "${jwt_key_file}"
+	
         stage('Deploye Code') {
             if (isUnix()) {
                 rc = sh returnStatus: true, script: "${toolbelt} force:auth:jwt:grant --clientid ${CONNECTED_APP_CONSUMER_KEY} --username ${HUB_ORG} --jwtkeyfile ${jwt_key_file} --setdefaultdevhubusername --instanceurl ${SFDC_HOST}"
@@ -45,7 +44,7 @@ node {
 			}
 			  
             printf rmsg
-            println('Hello from a Job DSL script!')
+            
             println(rmsg)
         }
     }
